@@ -16,6 +16,9 @@ class SuperUser{
 let superUser=new SuperUser('admin', 'admin');
 
 
- export function superUserLocalStorage(){
+ function superUserLocalStorage(){
     localStorage.setItem('superUserKey', JSON.stringify(superUser));
 }
+
+superUserLocalStorage();
+//console.log(superUser);
