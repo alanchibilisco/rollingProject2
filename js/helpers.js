@@ -2,7 +2,7 @@
 /*funcion campo requerido, aplica la clase is-valid o is-invalid 
 en funcion de que si completa el campo del input o no*/
 
-export function requiredField(input){
+ export function requiredField(input){
     if(input.value.trim().length>0){
         input.className='form-control is-valid';
         return true;
@@ -15,7 +15,7 @@ export function requiredField(input){
 /*funcion validar numeros con una expresion regular, valida 
 que sea de 0 a 9, con 1 digito como minimo y 9 como maximo*/
 
-export function validateNumbers(input){
+ export function validateNumbers(input){
     let regEx=/^[0-9]{1,9}$/;
     if(regEx.test(input.value)){
         input.className='form-control is-valid';
@@ -29,7 +29,7 @@ export function validateNumbers(input){
 
 //funcion validar url
 
-export function validateURL(input){
+ export function validateURL(input){
     let regExURL=/^https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?.*$/;
     if(regExURL.test(input.value)){
         input.className='form-control is-valid';
@@ -43,7 +43,7 @@ export function validateURL(input){
 
 //funcion validacion general en el formulario
 
-export function generalValidation(inputName, inputDescription, inputCategory, inputURL){
+ export function generalValidation(inputName, inputDescription, inputCategory, inputURL){
 
     let msj=document.getElementById('msj');
     if(requiredField(inputName)&&requiredField(inputDescription&&requiredField(inputCategory)&&validateURL(inputURL))){

@@ -1,19 +1,17 @@
  export class Product{
 
-    constructor(code, name, description, category, url){
+    constructor(code, category, description, model, brand, price, url){
         this.code=code;
-        this.name=name;
         this.description=description;
         this.category=category;
         this.url=url;
+        this.model=model;
+        this.brand=brand;
+        this.price=price;
     }
 
     set setCode(code){
         this.code=code;
-    }
-
-    set setName(name){
-        this.name=name;
     }
 
     set setDescription(description){
@@ -28,13 +26,21 @@
         this.url=url;
     }
 
-    get getCode(){
-        return this.code;
+    set setModel(model){
+        this.model=model;
     }
 
-    get getName(){
-        return this.name;
+    set setBrand(brand){
+        this.brand=brand;
     }
+
+    set setPrice(price){
+        this.price=price;
+    }
+    
+    get getCode(){
+        return this.code;
+    }    
 
     get getDescription(){
         return this.description;
@@ -46,6 +52,18 @@
 
     get getURL(){
         return this.url;
+    }
+
+    get getModel(){
+        return this.model;
+    }
+
+    get getBrand(){
+        return this.brand;
+    }
+
+    get getPrice(){
+        return this.price;
     }
 
 
