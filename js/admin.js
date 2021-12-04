@@ -7,7 +7,7 @@ import {
 
 import { Product } from "./productClass.js";
 
-import { random, regCodeLocalStorage } from "./randomCode.js";
+import { random} from "./randomCode.js";
 
 //variables
 
@@ -21,6 +21,7 @@ let inputUrl = document.getElementById("url");
 let form = document.getElementById("idForm");
 let regProducts =
   JSON.parse(localStorage.getItem("regProductsLocalStorage")) || [];
+export let regCode=JSON.parse(localStorage.getItem('regCodeKey')) || [];
 let productExist = false;
 let newBtn = document.getElementById("newBtn");
 
@@ -124,6 +125,9 @@ function saveRegProductsLocalStorage() {
   localStorage.setItem("regProductsLocalStorage", JSON.stringify(regProducts));
 }
 
+function regCodeLocalStorage(){
+    localStorage.setItem('regCodeKey',JSON.stringify(regCode));
+}
 //funcion para crear una nueva fila en la seccion 2
 function createRow(newProduct) {
   let productTable = document.getElementById("table");
@@ -207,8 +211,15 @@ window.eraseProduct = function (code) {
     return product.code != code;
   });
 
-  regProducts = newRegProd;
+  let newRegCode=regCode.filter((codeReg)=>{
+      return (codeReg!=code);
+  })
+  console.log(newRegCode);
+  console.log(regCode);
+  regProducts = newRegProd
+  regCode=newRegCode;
   saveRegProductsLocalStorage();
+  regCodeLocalStorage();
   cleanTable();
   initCharge();
   Swal.fire(
@@ -216,4 +227,5 @@ window.eraseProduct = function (code) {
     "Su producto fue correctamente eliminado",
     "success"
   );
+  console.log(regCode);
 };

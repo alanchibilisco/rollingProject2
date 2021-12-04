@@ -1,4 +1,6 @@
-let regCode=JSON.parse(localStorage.getItem('regCodeKey')) || [];
+import {regCode} from "./admin.js";
+
+//  export let regCode=JSON.parse(localStorage.getItem('regCodeKey')) || [];
 let repeated;
 
 export function random(){
@@ -25,6 +27,6 @@ function repeatedCode(code){
     return repeated;
 }
 
-export function regCodeLocalStorage(){
-    localStorage.setItem('regCodeKey',JSON.stringify(regCode));
-}
+//  export function regCodeLocalStorage(){
+//      localStorage.setItem('regCodeKey',JSON.stringify(regCode));
+//  }
