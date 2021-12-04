@@ -1,0 +1,200 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ROLLINGTECH</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <script src="https://kit.fontawesome.com/2e88fab4d5.js" crossorigin="anonymous"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark navfixed">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">ROLLINGTECH</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Store</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">PC'S</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">SmartPhones</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Accesorios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Soporte</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="">Nosotros</a>
+            </li>
+          </ul>
+          <button type="button" class="btn btn-dark">
+            <i class="fas fa-search"></i>
+          </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main class="container">
+    <section class="my-5">
+        <h1 class="display-3 text-center">Administración</h1>
+        <hr>
+        <article class="container bg-dark text text-white-50">
+         <h4>Seccion 1: Cargar Productos</h4>
+        </article>
+        <form id="idForm">
+            <div class="mb-3">
+                <label for="codigo" class="form-label">Codigo</label>
+                <input type="number" class="form-control" id="code" requerid minlength="1" maxlength="6" placeholder="El Codigo se genera de forma automatica" disabled>
+              </div>
+            <div class="mb-3">
+                <label for="categoria" class="form-label">Categoria</label>
+                <input type="text" class="form-control" id="category" requerid minlength="3" maxlength="25" placeholder="smartphone">
+              </div>
+            <div class="mb-3">
+                <label for="descripcion" class="form-label">Descripcion</label>
+                <textarea id="description" rows="3" class="form-control" requerid minlength="5" maxlength="200" ></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="modelo" class="form-label">Modelo</label>
+                <input type="text" class="form-control" id="model" requerid minlength="2" maxlength="20" placeholder="xt320">
+              </div>
+              <div class="mb-3">
+                <label for="marca" class="form-label">Marca</label>
+                <input type="text" class="form-control" id="brand" requerid minlength="4" maxlength="15"placeholder="Apple">
+              </div>  
+              <div class="mb-3">
+                <label for="precio" class="form-label">Precio</label>
+                <input type="number" class="form-control" id="price" requerid minlength="1" maxlength="9" placeholder="$20000">
+              </div>  
+              <div class="mb-3">
+                <label for="url" class="form-label">URL</label>
+                <input type="text" class="form-control" id="url" placeholder="https://http2.mlstatic.com/D_NQ_NP_800642-MLA32615842695_102019-O.jpg">
+              </div>
+              <button class="btn btn-primary" type="submit">Guardar</button>
+        </form>
+        <div class="alert alert-danger my-5 d-none" role="alert" id="msj">
+          Debe completar todos los campos!!
+        </div>
+    </section>
+    <section class="my-5">
+      <h2 class="display-3 text-center">Tabla de productos</h2>
+      <hr />
+      <article class="container bg-dark text text-white-50">
+        <h4>Seccion 2 : Modificar o Borrar productos</h4>
+       </article>
+      <button class="btn btn-primary my-2" type="submit">Nuevo</button>
+      <button class="btn btn-secondary my-2" type="submit">Cargar datos de prueba</button>
+      <table class="table my-5">
+        <thead>
+          <tr>
+            <th scope="col">Cod.</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Modelo</th>
+            <th scope="col">Marca</th>
+            <th scope="col">Precio</th>
+            <th scope="col">URL</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="table">
+          <!-- <tr>
+            <th scope="row">023</th>
+            <td>SmartPhones</td>
+            <td>Superfast 5G. All-screen OLED display 6.1″. A15 Bionic chip. 128GB Capacity</td>
+            <td>Iphone 13</td>
+            <td>Apple</td>
+            <td>20000</td>
+            <td>https://example-example-com/example</td>
+            <td class="text-center"><button class="btn btn-warning" type="submit"><i class="far fa-edit"></i></button> <button class="btn btn-danger" type="submit"><i class="fas fa-trash"></i></button></td>
+          </tr>
+          <tr>
+            <th scope="row">023</th>
+            <td>SmartPhones</td>
+            <td>Superfast 5G. All-screen OLED display 6.1″. A15 Bionic chip. 128GB Capacity</td>
+            <td>Iphone 13</td>
+            <td>Apple</td>
+            <td>20000</td>
+            <td>https://example-example-com/example</td>
+            <td class="text-center"><button class="btn btn-warning" type="submit"><i class="far fa-edit"></i></button> <button class="btn btn-danger" type="submit"><i class="fas fa-trash"></i></button></td>
+          </tr> -->
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+  <footer class="mt-4 container-fluid  bg-dark text-white-50 justify-content-evenly py-1">
+    <div class="container">
+      <section class="row">
+        <article class="col-sm-12 col-md-6 col-lg-3 mb-3">
+          <h4>Navegación</h4>
+          <ul class="navbar-nav ms-auto mb-0 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link text-white-50 " href="">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white-50 " href="">Soporte</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white-50" href="">Seguridad</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white-50" href="">Politica de privacidad</a>
+            </li>
+          </ul>
+        </article>
+        <article class=" col-sm-12 col-md-4 col-lg-3 mb-3">
+          <h4 class=" font">Store</h4>
+          <ul class="navbar-nav  ms-auto mb-2 mb-lg-0">
+            <li class="nav-item ">
+              <a class="nav-link active text-white-50 " href="#">Locales</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link text-white-50 " href="#">Financiamiento</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link text-white-50 " href="#">Estado de orden</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white-50" href="#">Plan Cambio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white-50" href="#">Terminos y condiciones</a>
+            </li>
+          </ul>
+        </article>
+        <article class=" col-sm-12 col-md-4 col-lg-3 mb-3">
+          <a href=""><img src="" width="220px" alt="Metodos de pago"></a>
+        </article>
+        <article class=" col-sm-12 col-md-4 col-lg-3 mb-3">
+          <br>
+          <h4>Seguinos</h4>
+          <a class="btn btn-dark my-2>" href=""><i class="fab fa-instagram fa-3x"></i></a>
+          <a class="btn btn-dark my-2" href=""><i
+              class="fab fa-facebook-square fa-3x"></i></a>
+        </article>
+      </section>
+    </div>
+    <p class="text-center">ROLLINGTECH &copy; Todos los derechos reservados</p>
+  </footer>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/admin.js" type="module"></script>
+</body>
+
+</html>
