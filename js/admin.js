@@ -14,6 +14,7 @@ let inputPrice=document.getElementById('price');
 let inputUrl=document.getElementById('url');
 let form=document.getElementById('idForm');
 let regProducts=JSON.parse(localStorage.getItem('regProductsLocalStorage')) || [];
+let productExist=false;
 
 //asociando los eventos
 
@@ -54,7 +55,12 @@ function saveProduct(e){
     e.preventDefault();
     //primero verifico todas las validaciones
     if(generalValidation(inputCategory, inputDescription, inputModel, inputBrand, inputPrice, inputUrl)){
-        createProduct();
+        if(productExist){
+            modifyProduct();
+        }else{
+            createProduct();
+        }
+        
     }
 
 }
@@ -87,6 +93,7 @@ function cleanForm(){
     inputUrl.className='form-control';
     saveRegProductsLocalStorage();
     regCodeLocalStorage();
+    productExist=false;
 }
 
 //funcion para guardar el arreglo de productos dentro del localStorage
@@ -105,7 +112,7 @@ function createRow(newProduct){
     <td>${newProduct.brand}</td>
     <td>${"$"+newProduct.price}</td>
     <td>${newProduct.url}</td>
-    <td class="text-center"><button class="btn btn-warning" type="submit"><i class="far fa-edit"></i></button> <button class="btn btn-danger" type="submit"><i class="fas fa-trash"></i></button></td>
+    <td class="text-center"><button class="btn btn-warning" onclick="prepareEdit(${newProduct.code})"><i class="far fa-edit"></i></button> <button class="btn btn-danger"><i class="fas fa-trash"></i></button></td>
   </tr>`
 }
 
@@ -117,4 +124,53 @@ function initCharge(){
             createRow(element);
         });
     }
+}
+
+//funcion global para mostrar en los input los datos del producto que se desea editar
+
+window.prepareEdit=function(code){
+    let wantedProduct=regProducts.find((product)=>{
+        return (product.code===code);
+    })
+    inputCode.value=wantedProduct.code;
+    inputCategory.value=wantedProduct.category;
+    inputDescription.value=wantedProduct.description;
+    inputModel.value=wantedProduct.model;
+    inputBrand.value=wantedProduct.brand;
+    inputPrice.value=wantedProduct.price;
+    inputUrl.value=wantedProduct.url;
+    productExist=true;
+}
+
+//funcion para modificar el producto y guardarlo dentro del localStorage
+
+function modifyProduct(){
+    let indexProduct=regProducts.findIndex((product)=>{
+        return (product.code===parseInt(inputCode.value));
+    });
+    console.log(inputCode.value);
+    console.log(indexProduct);
+    regProducts[indexProduct].description=inputDescription.value;
+    regProducts[indexProduct].category=inputCategory.value;
+    regProducts[indexProduct].model=inputModel.value;
+    regProducts[indexProduct].brand=inputBrand.value;
+    regProducts[indexProduct].price=inputPrice.value;
+    regProducts[indexProduct].url=inputUrl.value;
+    saveRegProductsLocalStorage();
+    cleanTable();
+    initCharge();
+    Swal.fire(
+        'Producto modificado',
+        'Su producto fue correctamente cargado',
+        'success'
+      )
+
+    cleanForm();  
+
+}
+
+
+function cleanTable(){
+    let productTable=document.getElementById('table');
+    productTable.innerHTML='';
 }
