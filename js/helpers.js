@@ -43,15 +43,16 @@ que sea de 0 a 9, con 1 digito como minimo y 9 como maximo*/
 
 //funcion validacion general en el formulario
 
- export function generalValidation(inputName, inputDescription, inputCategory, inputURL){
+ export function generalValidation(inputCategory, inputDescription, inputModel, inputBrand, inputPrice, inputUrl){
 
     let msj=document.getElementById('msj');
-    if(requiredField(inputName)&&requiredField(inputDescription&&requiredField(inputCategory)&&validateURL(inputURL))){
+    if(requiredField(inputCategory)&&requiredField(inputDescription)&&requiredField(inputModel)&&requiredField(inputBrand)&&validateNumbers(inputPrice)&&validateURL(inputUrl)){
         msj.className='alert alert-danger my-5 d-none';
         return true;
     }else{
         msj.className='alert alert-danger my-5';
         return false;
+        console.log('desde gralvalidate else');
     }
 
 }
