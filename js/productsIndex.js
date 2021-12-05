@@ -6,17 +6,17 @@ regProducts.forEach(product => {
     
 });
 
-//primera muestra, hay q agregar los demas atributos
+//funcion para crear las cards de los productos almacenados en localStorage
 function createCard(product){
-    let row=document.getElementById('row');
-    row.innerHTML+="<p>pruebita</p><p>pruebita</p><p>pruebita</p><p>pruebita</p><p>pruebita</p><p>pruebita</p><p>pruebita</p><p>pruebita</p>"
+    let productsCards=document.getElementById('productsCards');
+
+    productsCards.innerHTML+=`<div class="col-sm-12 col-md-6 col-lg-6 my-2">
+    <div class="card">
+      <div class="card-body">
+        <img src="${product.url}" alt="${"Imagen de "+product.description}" 
+        onerror="this.src='img/image-not-found.png';" width=100%>
+        <h5 class="card-title">${product.description+"-Modelo-"+product.model}</h5><span class="badge rounded-pill bg-primary">${'$ '+product.price+',00'}</span></h5>
+      </div>
+    </div>
+  </div>`;
 }
-
-//probar para ver si funciona
-function chargeImage(){
-    document.write("img/notfound.jpg")
-}
-
-
-// let row=document.getElementById('row');
-// row.innerHTML="<p>pruebita</p><p>pruebita</p><p>pruebita</p><p>pruebita</p><p>pruebita</p><p>pruebita</p><p>pruebita</p><p>pruebita</p>";
