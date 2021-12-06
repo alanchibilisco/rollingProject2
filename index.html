@@ -100,8 +100,92 @@
         </button>
       </div>
     </article>
+
+    <!-- modificacion de ubicacion -->
+    <article>
+      <div class="container text-center mt-3">
+        <div class="row">
+          <div class="col order-last">
+            <div class="card bg-dark text-white">
+              <img src="https://images.pexels.com/photos/7711126/pexels-photo-7711126.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img" alt="...">
+              <div class="card-img-overlay">
+                <h5 class="card-title">ROLLING STORE</h5>
+                <p class="card-text">Encuentra los mejores productos a un excelente precio</p>
+                <a class="card-text text-light" href="">Ver mas ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="card bg-dark text-white">
+                    <img src="https://images.pexels.com/photos/6934978/pexels-photo-6934978.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img" alt="...">
+                    <div class="card-img-overlay">
+                      <h5 class="card-title">RROLLING CAMERA </h5>
+                      <p class="card-text">Nuevo sensor / Nuevo lente / Nuevo sistema de PostProcesado</p>
+                      <a class="card-text text-light" href="">Echale un vistazo ></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="card bg-dark text-white">
+                    <img src="https://images.pexels.com/photos/8346914/pexels-photo-8346914.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img" alt="...">
+                    <div class="card-img-overlay">
+                      <h5 class="card-title">ROLLING OUTLET</h5>
+                      <p class="card-text">Productos con hasta 50% de descuento!</p>
+                      <a class="card-text text-light" href="">Ver mas ></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="card bg-dark text-white">
+                    <img src="https://images.pexels.com/photos/4526407/pexels-photo-4526407.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img" alt="...">
+                    <div class="card-img-overlay">
+                      <h5 class="card-title">ROLLING BUDS PRO</h5>
+                      <p class="card-text">Creado en colaboracion con RollingSound</p>
+                      <a class="card-text text-light" href="">Compra ahora ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </article>
+
+    <!-- fin de modificacion de ubicacion -->
+
     <!-- le agregue al section la clase container -->
         <section class="mt-3 text-center container">
+          <h2 class=" bg-black text-white">Catalogo de productos</h2>
+          <hr>
+          <!-- agregado filtro -->
+          <div class="border border-2 border-danger d-flex justify-content-end">
+          <div class=" col-sm-12 col-md-2 border border-1 border-danger">
+            <label for="filter" class="form-label">State</label>
+            <select id="filter" class="form-select">
+              <option selected>Todo</option>
+              <option>Laptop</option>
+              <option>Smartphone</option>
+              <option>Tablet</option>
+              <option>Accesorios</option>
+              <option>A-Z</option>
+
+            </select>
+          </div>
+        </div>
+        <!-- fin filtro -->
           <!-- reemplaze el div por un article -->
       <article class="row" id="productsCards">
         <!-- a todas las cards de productos le aplique las siguientes clases "col-sm-12 col-md-6 col-lg-6 my-2" -->
@@ -141,68 +225,9 @@
           </div>
         </div> -->
       </article>
+      <hr>
     </section>  
-<article>
-  <div class="container text-center mt-3">
-    <div class="row">
-      <div class="col order-last">
-        <div class="card bg-dark text-white">
-          <img src="https://images.pexels.com/photos/7711126/pexels-photo-7711126.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img" alt="...">
-          <div class="card-img-overlay">
-            <h5 class="card-title">ROLLING STORE</h5>
-            <p class="card-text">Encuentra los mejores productos a un excelente precio</p>
-            <a class="card-text text-light" href="">Ver mas ></a>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="card bg-dark text-white">
-                <img src="https://images.pexels.com/photos/6934978/pexels-photo-6934978.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img" alt="...">
-                <div class="card-img-overlay">
-                  <h5 class="card-title">RROLLING CAMERA </h5>
-                  <p class="card-text">Nuevo sensor / Nuevo lente / Nuevo sistema de PostProcesado</p>
-                  <a class="card-text text-light" href="">Echale un vistazo ></a>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="card bg-dark text-white">
-                <img src="https://images.pexels.com/photos/8346914/pexels-photo-8346914.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img" alt="...">
-                <div class="card-img-overlay">
-                  <h5 class="card-title">ROLLING OUTLET</h5>
-                  <p class="card-text">Productos con hasta 50% de descuento!</p>
-                  <a class="card-text text-light" href="">Ver mas ></a>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="card bg-dark text-white">
-                <img src="https://images.pexels.com/photos/4526407/pexels-photo-4526407.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img" alt="...">
-                <div class="card-img-overlay">
-                  <h5 class="card-title">ROLLING BUDS PRO</h5>
-                  <p class="card-text">Creado en colaboracion con RollingSound</p>
-                  <a class="card-text text-light" href="">Compra ahora ></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-</article>
+
     <section>
       <div class="container text-center mt-3">
         <div class="row">

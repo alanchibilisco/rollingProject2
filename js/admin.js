@@ -24,6 +24,7 @@ let regProducts =
 export let regCode=JSON.parse(localStorage.getItem('regCodeKey')) || [];
 let productExist = false;
 let newBtn = document.getElementById("newBtn");
+let msj=document.getElementById('msj');
 
 //asociando los eventos
 
@@ -115,6 +116,7 @@ function cleanForm() {
   inputBrand.className = "form-control";
   inputPrice.className = "form-control";
   inputUrl.className = "form-control";
+  msj.className='alert alert-danger my-5 d-none';
   saveRegProductsLocalStorage();
   regCodeLocalStorage();
   productExist = false;
