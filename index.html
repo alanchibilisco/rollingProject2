@@ -168,12 +168,13 @@
 
     <!-- le agregue al section la clase container -->
         <section class="mt-3 text-center container">
-          <h2 class=" bg-black text-white">Catalogo de productos</h2>
-          <hr>
+       
+          <h2 class="container bg-black text-light">Catalogo de productos</h2>
+          
           <!-- agregado filtro -->
-          <div class="border border-2 border-danger d-flex justify-content-end">
-          <div class=" col-sm-12 col-md-2 border border-1 border-danger">
-            <label for="filter" class="form-label">State</label>
+          
+          <div class=" col-sm-12 col-md-3 container">
+            <label for="filter" class="form-label mx-5">Filtrar</label>
             <select id="filter" class="form-select">
               <option selected>Todo</option>
               <option>Laptop</option>
@@ -181,11 +182,13 @@
               <option>Tablet</option>
               <option>Accesorios</option>
               <option>A-Z</option>
+              <option>Z-A</option>
 
             </select>
           </div>
-        </div>
+        
         <!-- fin filtro -->
+      
           <!-- reemplaze el div por un article -->
       <article class="row" id="productsCards">
         <!-- a todas las cards de productos le aplique las siguientes clases "col-sm-12 col-md-6 col-lg-6 my-2" -->
