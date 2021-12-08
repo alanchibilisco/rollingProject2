@@ -59,27 +59,39 @@
         </article>
         <form id="idForm">
             <div class="mb-3">
-                <label for="codigo" class="form-label">Codigo</label>
+                <label for="code" class="form-label">Codigo</label>
                 <input type="number" class="form-control" id="code" requerid minlength="1" maxlength="6" placeholder="El Codigo se genera de forma automatica" disabled>
               </div>
-            <div class="mb-3">
+            <!-- <div class="mb-3">
                 <label for="categoria" class="form-label">Categoria</label>
                 <input type="text" class="form-control" id="category" requerid minlength="3" maxlength="25" placeholder="smartphone">
+              </div> -->
+              <!-- agregado -->
+              <div class="mb-3">
+                <label for="category" class="form-label">Categoria</label>
+                <select id="category" class="form-select">
+                  <option selected>Laptop</option>
+                  <option>Smartphone</option>
+                  <option>Tablet</option>
+                  <option>Accesorios</option>
+                </select>
               </div>
+              <!-- fin agregado -->
             <div class="mb-3">
-                <label for="descripcion" class="form-label">Descripcion</label>
+                <label for="description" class="form-label">Descripcion</label>
                 <textarea id="description" rows="3" class="form-control" requerid minlength="5" maxlength="200" ></textarea>
               </div>
               <div class="mb-3">
-                <label for="modelo" class="form-label">Modelo</label>
+                <label for="model" class="form-label">Modelo</label>
                 <input type="text" class="form-control" id="model" requerid minlength="2" maxlength="20" placeholder="xt320">
               </div>
+              
               <div class="mb-3">
-                <label for="marca" class="form-label">Marca</label>
+                <label for="brand" class="form-label">Marca</label>
                 <input type="text" class="form-control" id="brand" requerid minlength="4" maxlength="15"placeholder="Apple">
               </div>  
               <div class="mb-3">
-                <label for="precio" class="form-label">Precio</label>
+                <label for="price" class="form-label">Precio</label>
                 <input type="number" class="form-control" id="price" requerid minlength="1" maxlength="9" placeholder="$20000">
               </div>  
               <div class="mb-3">
