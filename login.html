@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--agregar las 3 etiquetas meta-->
     <title>ROLLINGTECH LOGIN</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <script src="https://kit.fontawesome.com/2e88fab4d5.js" crossorigin="anonymous"></script>
@@ -50,12 +51,15 @@
     <main class="pt-5">
       <div class="container-md">
       <div class="row align-items-center  w-100">
-        <div class="col-sm-12 col-md-6">
+        <div class="col-sm-12 col-md-6" data-aos="fade-right"
+        data-aos-anchor="#example-anchor"
+        data-aos-offset="500"
+        data-aos-duration="500">
           <H1 class="display-4 mt-3">Accede a tu cuenta</H1>
           <form>
             <div>
               <label for="InputEmail1" class="form-label">Email / Usuario</label>
-              <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" required placeholder="Juanperez@cinerolling.com">
+              <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" required placeholder="Juanperez@rollingtech.com">
             </div>
             <div class="mb-3">
               <label for="InputPassword1" class="form-label">Contraseña</label>
@@ -71,10 +75,13 @@
           </form>
           <hr>
           <section class="text-center">
-        <a href=".."><button class="rounded-pill border border-white bg-primary text-white"><i class="fab fa-facebook-square"></i>    Inicia sesion con Facebook </button></a>
-        <a href=""><button class="rounded-pill border border-white bg-danger text-white"><i class="fab fa-google-plus-square"></i>   Inicia sesion con Google</button></a>
+        <a href="eror404.html"><button class="rounded-pill border border-white bg-primary text-white"><i class="fab fa-facebook-square"></i>    Inicia sesion con Facebook </button></a>
+        <a href="eror404.html"><button class="rounded-pill border border-white bg-danger text-white"><i class="fab fa-google-plus-square"></i>   Inicia sesion con Google</button></a>
         </div>
-        <div class="col-sm-12 col-md-6">
+        <div class="col-sm-12 col-md-6" data-aos="fade-left"
+        data-aos-anchor="#example-anchor"
+        data-aos-offset="500"
+        data-aos-duration="500">
          <img src="https://images.pexels.com/photos/3585093/pexels-photo-3585093.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="login" class="img-fluid mt-5 shadow-lg rounded">
         </section></div>
       </div>
@@ -94,7 +101,7 @@
         </div>
         <form>
         <label for="inputEmail5" class="form-label">Email / Usuario</label>
-        <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" placeholder="Juanperez@cinerolling.com" required minlength="4"></div>
+        <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" placeholder="Juanperez@rollingtech.com" required minlength="4"></div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
         <button type="submit" class="btn btn-primary">Enviar</button>
@@ -165,5 +172,9 @@
           <p class="text-center">ROLLINGTECH &copy; Todos los derechos reservados</p>
     </footer>
     <script src="js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
   </body>
 </html>
