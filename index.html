@@ -45,18 +45,17 @@
               <a class="nav-link" href="">Nosotros</a>
             </li>
             <!-- agregue el id:linkAdmin a la <a> -->
-            <li class="nav-item" id="linkAd">
-              <a class="nav-link"href="admin.html" id="linkAdmin">Administracion</a>
+            <li class="nav-item d-none" id="linkAdmin">
+              <a class="nav-link"href="admin.html" >Administracion</a>
             </li>
             <!-- fin etiqueta <a> -->
           </ul>
           <!-- cambio el btn por el nombre del usuario -->
-          <a type="button" class="btn btn-dark text-white" id="userBtn" href="login.html"> INVITADO           
-          </a>
+          <a type="button" class="btn btn-dark text-white" id="userBtn" href="login.html" >Ingresar</a>
           <!-- modifique la etiqueta btn por a y la redirigi a login.html -->
-          <a type="button" class="btn btn-dark" href="login.html">
+          <button type="button" class="btn btn-dark d-none" id="exitBtn">
             <i class="fas fa-sign-in-alt"></i>
-          </a>
+          </button>
 
           </form>
         </div>
@@ -336,6 +335,6 @@
   <!-- <script src="js/superUserClass.js"></script> -->
   <script src="js/productsIndex.js"></script>
   <!-- <script src="js/userSession.js"></script> -->
-  <script src="js/indexSesion.js" type="module"></script>
+  <script src="js/indexSesion.js"></script>
 </body>
 </html>

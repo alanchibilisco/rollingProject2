@@ -1,20 +1,10 @@
-class SuperUser{   
-    constructor(name, password){
-        this.name=name;
-        this.password=password;
-    }
-   get getName(){
-       return this.name;
-   }   
-}
-
-let superUser=new SuperUser('admin', 'admin');
+let superUser={name:'admin', password:'admin'};
 
 
 let inputUser=document.getElementById('inputUser');
 let inputPass=document.getElementById('inputPass');
 let formLogin=document.getElementById('formLogin');
-export let sesionInit=false;
+let sesionInit=false;
 
 //console.log(superUser);
 //console.log(inputUser.value);
@@ -30,6 +20,8 @@ function login(e){
         if(inputPass.value===superUser.password){
             sesionInit=true;
             console.log('ingresado desde admin');
+            localStorage.setItem('stateSesion', JSON.stringify(sesionInit));
+            localStorage.setItem('user', JSON.stringify(superUser));
             window.location.replace("index.html");
 
         }else{
