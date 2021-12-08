@@ -2,9 +2,11 @@
 
 let stateSesion=JSON.parse(localStorage.getItem('stateSesion')) || false;
 
-let user=JSON.parse(localStorage.getItem('user'));
+let user=JSON.parse(localStorage.getItem('user')) || '';
 
 let linkAdmin=document.getElementById('linkAdmin');
+
+let regBtn=document.getElementById('regBtn');
 
 let userBtn=document.getElementById('userBtn');
 
@@ -18,6 +20,7 @@ console.log(exitBtn);
 
 if(stateSesion){
     linkAdmin.className='nav-item';
+    regBtn.className='d-none';
     exitBtn.className='btn btn-dark';
     userBtn.innerHTML=user.name;
     userBtn.removeAttribute("href");
@@ -33,7 +36,8 @@ function closeSesion(){
     if(stateSesion){
         stateSesion=false;
     localStorage.setItem('stateSesion', JSON.stringify(stateSesion));
-    window.location.reload();
+    localStorage.removeItem('user');
+    window.location.replace("index.html");
     }else{
         window.location.reload();
     }

@@ -41,10 +41,24 @@
             <li class="nav-item">
               <a class="nav-link" href="">Nosotros</a>
             </li>
+            <!-- agregue el id:linkAdmin a la <a> -->
+              <li class="nav-item d-none" id="linkAdmin">
+                <a class="nav-link"href="admin.html" >Administracion</a>
+              </li>
           </ul>
-          <button type="button" class="btn btn-dark">
-            <i class="fas fa-search"></i>
+          <!-- agrego los botones del index -->
+
+          
+            <!-- fin etiqueta <a> -->
+          
+          <!-- cambio el btn por el nombre del usuario -->
+          <a type="button" class="btn btn-dark text-white" id="regBtn" href="registro.html" >Registro</a>
+          <a type="button" class="btn btn-dark text-white" id="userBtn" href="login.html" >Ingresar</a>
+          <!-- modifique la etiqueta btn por a y la redirigi a login.html -->
+          <button type="button" class="btn btn-dark d-none" id="exitBtn">
+            <i class="fas fa-sign-in-alt"></i>
           </button>
+
           </form>
         </div>
       </div>
@@ -207,6 +221,7 @@
   </footer>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/admin.js" type="module"></script>
+  <script src="js/indexSesion.js"></script>
 </body>
 
 </html>
