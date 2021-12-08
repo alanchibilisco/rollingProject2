@@ -1,6 +1,26 @@
+<<<<<<< HEAD
 .navfixed{
     position: fixed;
     z-index: 4;
     width: 100%;
     top: 0;
+=======
+.contenedorImg {
+    display: flex;
+    justify-content: space-between;
+}
+
+.imgCircular {
+    border-radius: 50%;
+    border: 2px solid #023047;
+    width: 50%;
+}
+
+.shadow {
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+
+.pt-3 {
+    padding-top: 1rem!important;
+>>>>>>> eb60840c93698c91a3f1eb929b6c758a65fab53f
 }
