@@ -43,6 +43,10 @@
                   <li class="nav-item">
                     <a class="nav-link" href="">Nosotros</a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="admin.html">Administracion
+                    </a>
+                  </li>
                 </ul>
                 <button type="button" class="btn btn-dark">
                   <i class="fas fa-search"></i>
@@ -55,23 +59,63 @@
             </div>
           </nav>
     </header>
-    <main class="my-5">
-      <section class="container">
-        <h3 class="text-center">Login</h3>
-        <form>
+    <main class="pt-5">
+      <div class="container-md">
+      <div class="row align-items-center  w-100">
+        <div class="col-sm-12 col-md-6">
+          <H1 class="display-4 mt-3">Accede a tu cuenta</H1>
+          <form>
             <div>
-              <label class="form-label">Email</label>
-              <input type="email" class="form-control" placeholder="juanperez@gmail.com">
+              <label for="InputEmail1" class="form-label">Email / Usuario</label>
+              <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" required placeholder="Juanperez@cinerolling.com">
             </div>
             <div class="mb-3">
-              <label class="form-label">Password</label>
-              <input type="password" class="form-control" placeholder="******">
+              <label for="InputPassword1" class="form-label">Contraseña</label>
+              <input type="password" class="form-control" id="InputPassword1" required placeholder="Ingrese su contraseña...">
             </div>
-            <button type="submit" class="btn btn-primary">Login</button>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="Check1">
+              <label class="form-check-label" for="Check1">No soy un robot</label>
+            </div>
+            <div>
+            <button type="submit" class="btn btn-success ">Iniciar Sesion</button><button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#passwordModal">Olvidaste tu Contraseña?</button>             
+          </div>
           </form>
-        </section>
+          <hr>
+          <section class="text-center">
+        <a href=".."><button class="rounded-pill border border-white bg-primary text-white"><i class="fab fa-facebook-square"></i>    Inicia sesion con Facebook </button></a>
+        <a href=""><button class="rounded-pill border border-white bg-danger text-white"><i class="fab fa-google-plus-square"></i>   Inicia sesion con Google</button></a>
+        </div>
+        <div class="col-sm-12 col-md-6">
+         <img src="https://images.pexels.com/photos/3585093/pexels-photo-3585093.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="login" class="img-fluid mt-5 shadow-lg rounded">
+        </section></div>
+      </div>
+      </div>
     </main>
-    <footer class="my-5 container-fluid  bg-dark text-white-50 justify-content-evenly py-1">
+    <!-- Modal olvidaste tu contraseña-->
+<div class="modal fade" id="passwordModal" tabindex="-1" aria-labelledby="passwordModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="passwordModalLabel">Recupera tu contraseña</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div id="passwordHelpBlock" class="form-text">
+         Ingresa tu Email/Usuario registrado, y al finalizar, chequea tu casilla de correo para resetear tu contraseña.
+        </div>
+        <form>
+        <label for="inputEmail5" class="form-label">Email / Usuario</label>
+        <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" placeholder="Juanperez@cinerolling.com" required minlength="4"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+    <footer class="my-5 container-fluid  bg-dark text-white-50 justify-content-evenly p-5">
         <div class="container">
             <section class="row">
               <article class="col-sm-12 col-md-6 col-lg-3 mb-3">
