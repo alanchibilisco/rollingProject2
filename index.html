@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ROLLINGTECH</title>
   <link rel="stylesheet" href="css/bootstrap.min.css" />
-  <link rel="stylesheet" href="css/style.css">
+  <!-- <link rel="stylesheet" href="css/style.css"> -->
   <script src="https://kit.fontawesome.com/2e88fab4d5.js" crossorigin="anonymous"></script>
 </head>
 
@@ -44,16 +44,20 @@
             <li class="nav-item">
               <a class="nav-link" href="">Nosotros</a>
             </li>
+            <!-- agregue el id:linkAdmin a la <a> -->
             <li class="nav-item" id="linkAd">
-              <a class="nav-link" href="admin.html">Administracion</a>
+              <a class="nav-link"href="admin.html" id="linkAdmin">Administracion</a>
             </li>
+            <!-- fin etiqueta <a> -->
           </ul>
-          <button type="button" class="btn btn-dark">
-            <i class="fas fa-search"></i>
-          </button>
-          <button type="button" class="btn btn-dark">
+          <!-- cambio el btn por el nombre del usuario -->
+          <a type="button" class="btn btn-dark text-white" id="userBtn" href="login.html"> INVITADO           
+          </a>
+          <!-- modifique la etiqueta btn por a y la redirigi a login.html -->
+          <a type="button" class="btn btn-dark" href="login.html">
             <i class="fas fa-sign-in-alt"></i>
-          </button>
+          </a>
+
           </form>
         </div>
       </div>
@@ -329,7 +333,9 @@
     <p class="text-center">ROLLINGTECH &copy; Todos los derechos reservados</p>
   </footer>
   <script src="js/bootstrap.min.js"></script>
-  <script src="js/superUserClass.js"></script>
+  <!-- <script src="js/superUserClass.js"></script> -->
   <script src="js/productsIndex.js"></script>
+  <!-- <script src="js/userSession.js"></script> -->
+  <script src="js/indexSesion.js" type="module"></script>
 </body>
 </html>

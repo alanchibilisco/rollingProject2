@@ -58,14 +58,14 @@
     <main class="my-5">
       <section class="container">
         <h3 class="text-center">Login</h3>
-        <form>
+        <form id="formLogin"> 
             <div>
               <label class="form-label">Email</label>
-              <input type="email" class="form-control" placeholder="juanperez@gmail.com">
+              <input type="text" class="form-control" placeholder="example@example.com" id="inputUser">
             </div>
             <div class="mb-3">
               <label class="form-label">Password</label>
-              <input type="password" class="form-control" placeholder="******">
+              <input type="password" class="form-control" placeholder="Password" id="inputPass">
             </div>
             <button type="submit" class="btn btn-primary">Login</button>
           </form>
@@ -126,5 +126,6 @@
           <p class="text-center">ROLLINGTECH &copy; Todos los derechos reservados</p>
     </footer>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/login.js"></script>
   </body>
 </html>
