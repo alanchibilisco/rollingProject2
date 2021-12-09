@@ -2,7 +2,11 @@
     position: fixed;
     z-index: 4;
     width: 100%;
-    top: 0;
+    top: 0;}
+
+.fonts{
+    font-family: 'Nunito', sans-serif;
+}
 
     .contenedorImg {
     display: flex;

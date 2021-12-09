@@ -12,7 +12,7 @@ regProducts.forEach((product) => {
 //funcion para crear las cards de los productos almacenados en localStorage
 function createCard(product) {
   productsCards.innerHTML += `<div class="col-sm-12 col-md-6 col-lg-3 my-2 text-center border-2">
-    <div class="card h-100">
+    <div class="card h-100" data-aos="zoom-in-down>
       <div class="card-body">
         <img class="w-100" src="${product.url}" alt="${"Imagen de " + product.description}" 
         onerror="this.src='img/image-not-found.png';>
