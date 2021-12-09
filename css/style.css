@@ -1,0 +1,21 @@
+body{
+    background-color: aliceblue;
+    background-size: 100vw 100vh;
+    background-attachment: fixed;
+    margin: 0;
+}
+
+form{
+    margin: auto;
+    background: rgba(179, 190, 219, 0.4);
+    padding: 10px 20px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border-radius: 7px;
+}
+
+.boton{
+background: #31384a;
+color: #fff;
+padding: 10px;
+}
