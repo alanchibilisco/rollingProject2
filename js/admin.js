@@ -158,11 +158,12 @@ function createRowUser(user){
   <th scope="row">${user.name}</th>
   <td>${user.email}</td>
   <td>${user.pass}</td>            
-  <td class="text-center"><button class="btn btn-dark"><i class="fas fa-trash"></i></button></td>
+  <td class="text-center"><button class="btn btn-dark" onclick='eraseUser("${
+    user.email}")'><i class="fas fa-trash"></i></button></td>
 </tr>`;
 }
 
-//funcion para la carga inicial de la tabla tomando los datos de productos desde el localStorage
+//funcion para la carga inicial de la tabla tomando los datos de productos y usuarios desde el localStorage
 
 function initCharge() {
   if (regProducts.length > 0) {
@@ -249,4 +250,23 @@ window.eraseProduct = function (code) {
     "success"
   );
   console.log(regCode);
+};
+
+window.eraseUser = function (email){
+  let newRegUser=regUser.filter((user)=>{
+    return (user.email!=email);
+})
+  console.log(regUser);
+  console.log(newRegUser);
+  regUser=newRegUser;
+  localStorage.removeItem('regUser');
+  localStorage.setItem('regUser', JSON.stringify(regUser));
+  let tableUser=document.getElementById('tableUser');
+  tableUser.innerHTML='';
+  initChargeUser();
+  Swal.fire(
+    "Usuario Eliminado",
+    "El Usuario fue correctamente eliminado",
+    "success"
+  );
 };
