@@ -1,5 +1,5 @@
 //variables
-
+let superUser={name:'admin', password:'admin'};
 let stateSesion=JSON.parse(localStorage.getItem('stateSesion')) || false;
 
 let user=JSON.parse(localStorage.getItem('user')) || '';
@@ -19,18 +19,23 @@ console.log(userBtn);
 console.log(exitBtn);
 
 if(stateSesion){
-    linkAdmin.className='nav-item';
-    regBtn.className='d-none';
-    exitBtn.className='btn btn-dark';
-    userBtn.innerHTML=user.name;
-    userBtn.removeAttribute("href");
-    exitBtn.addEventListener('click', closeSesion);    
+    if(user.name===superUser.name){
+        linkAdmin.className='nav-item';
+        regBtn.className='d-none';
+        exitBtn.className='btn btn-dark';
+        userBtn.innerHTML=user.name;
+        userBtn.removeAttribute("href");
+        exitBtn.addEventListener('click', closeSesion);      
+    }else{
+        //linkAdmin.className='nav-item';
+        regBtn.className='d-none';
+        exitBtn.className='btn btn-dark';
+        userBtn.innerHTML=user.name;
+        userBtn.removeAttribute("href");
+        exitBtn.addEventListener('click', closeSesion);   
+    }
+     
 }
-
-
-
-
-
 
 function closeSesion(){
     if(stateSesion){

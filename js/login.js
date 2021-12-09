@@ -1,6 +1,6 @@
 let superUser={name:'admin', password:'admin'};
 let regUser=JSON.parse(localStorage.getItem('regUser'));
-console.log(regUser);
+//console.log(regUser);
 let inputUser=document.getElementById('inputUser');
 let inputPass=document.getElementById('inputPass');
 let formLogin=document.getElementById('formLogin');
@@ -17,18 +17,16 @@ function login(e){
     if(inputUser.value===superUser.name){
         if(inputPass.value===superUser.password){
             sesionInit=true;
-            console.log('ingresado desde admin');
+            //console.log('ingresado desde admin');
             localStorage.setItem('stateSesion', JSON.stringify(sesionInit));
             localStorage.setItem('user', JSON.stringify(superUser));
             window.location.replace("index.html");
 
         }else{
             alert('Contraseña Incorrecta. Ingrese nuevamente');
-            console.log('contraseña incorrecta');
+            //console.log('contraseña incorrecta');
         }
-    }
-
-    if(inputUser.value===findUser(inputUser.value).email){
+    }else if(inputUser.value===findUser(inputUser.value).email){
         //console.log('desde '+findUser(inputUser.value).email);
         if(inputPass.value===findUser(inputUser.value).pass){
             //console.log('correctamente logeado');
@@ -44,6 +42,10 @@ function login(e){
     }else{
         alert('Usuario Incorrecto. Ingrese nuevamente');
     }
+
+    
+
+    
     
   
 
