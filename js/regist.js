@@ -12,7 +12,7 @@ let formReg=document.getElementById('formReg');
 let inputUserReg=document.getElementById('inputUserReg');
 let inputEmailReg=document.getElementById('inputEmailReg');
 let inputPassReg=document.getElementById('inputPassReg');
-let regUser=[];
+let regUser= JSON.parse(localStorage.getItem('regUser')) || [];
 
 
 //agregando eventos

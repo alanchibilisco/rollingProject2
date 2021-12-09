@@ -22,6 +22,7 @@ let form = document.getElementById("idForm");
 let regProducts =
   JSON.parse(localStorage.getItem("regProductsLocalStorage")) || [];
 export let regCode=JSON.parse(localStorage.getItem('regCodeKey')) || [];
+let regUser=JSON.parse(localStorage.getItem('regUser')) || [];
 let productExist = false;
 let newBtn = document.getElementById("newBtn");
 let msj=document.getElementById('msj');
@@ -56,9 +57,11 @@ form.addEventListener("submit", saveProduct);
 
 newBtn.addEventListener("click", cleanForm);
 
-//llamo a la carga inicial de los productos en la tabla
+//llamo a la carga inicial de los productos en la tabla y de los usuarios
 
 initCharge();
+initChargeUser();
+
 
 //funcion para guardar el producto
 function saveProduct(e) {
@@ -130,7 +133,7 @@ function saveRegProductsLocalStorage() {
 function regCodeLocalStorage(){
     localStorage.setItem('regCodeKey',JSON.stringify(regCode));
 }
-//funcion para crear una nueva fila en la seccion 2
+//funcion para crear una nueva fila en la seccion 2 y 3
 function createRow(newProduct) {
   let productTable = document.getElementById("table");
   productTable.innerHTML += `<tr>
@@ -149,6 +152,16 @@ function createRow(newProduct) {
   </tr>`;
 }
 
+function createRowUser(user){
+  let tableUser=document.getElementById('tableUser');
+  tableUser.innerHTML+=`<tr>
+  <th scope="row">${user.name}</th>
+  <td>${user.email}</td>
+  <td>${user.pass}</td>            
+  <td class="text-center"><button class="btn btn-dark"><i class="fas fa-trash"></i></button></td>
+</tr>`;
+}
+
 //funcion para la carga inicial de la tabla tomando los datos de productos desde el localStorage
 
 function initCharge() {
@@ -156,6 +169,12 @@ function initCharge() {
     regProducts.forEach((element) => {
       createRow(element);
     });
+  }
+}
+
+function initChargeUser(){
+  if(regUser.length>0){
+    regUser.forEach((user)=>{ createRowUser(user);});  
   }
 }
 
