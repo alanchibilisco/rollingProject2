@@ -4,7 +4,7 @@
     width: 100%;
     top: 0;
 
-.contenedorImg {
+    .contenedorImg {
     display: flex;
     justify-content: space-between;
 }
