@@ -144,9 +144,9 @@ function createRow(newProduct) {
     <td>${newProduct.brand}</td>
     <td>${"$" + newProduct.price}</td>
     <td>${newProduct.url}</td>
-    <td class="text-center"><button class="btn btn-warning" onclick="prepareEdit(${
+    <td class="text-center"><button class="btn btn-white border border-1 border-dark my-1" onclick="prepareEdit(${
       newProduct.code
-    })"><i class="far fa-edit"></i></button> <button class="btn btn-danger" onclick='eraseProduct(${
+    })"><i class="far fa-edit"></i></button> <button class="btn btn-dark border border-1 border-dark my-1" onclick='eraseProduct(${
     newProduct.code
   })'><i class="fas fa-trash"></i></button></td>
   </tr>`;
