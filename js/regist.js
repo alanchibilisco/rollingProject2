@@ -80,6 +80,10 @@ function saveUser(e){
     e.preventDefault();
     if(gralValidate(inputUserReg, inputEmailReg, inputPassReg)){
         createUser();
+        window.setTimeout(function(){
+            window.location.replace("login.html")
+        }, 1500);
+        
     }
 }
 
