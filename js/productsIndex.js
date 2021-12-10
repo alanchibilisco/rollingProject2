@@ -1,28 +1,28 @@
 let regProducts =
   JSON.parse(localStorage.getItem("regProductsLocalStorage")) || [];
 
-  let productsCards = document.getElementById("productsCards");
+let productsCards = document.getElementById("productsCards");
 
 let filter = document.getElementById("filter");
 
- regProducts.forEach(product => {
+regProducts.forEach(product => {
 
      createCard(product);
 
  });
 
 //funcion para crear las cards de los productos almacenados en localStorage
-function createCard(product) {
-  
-  
+function createCard(product) {  
   productsCards.innerHTML += `<div class="col-sm-12 col-md-6 col-lg-6 my-2">
-    <div class="card">
+    <div class="card shadow bg-light border border-0">
       <div class="card-body">
-        <img src="${product.url}" alt="${"Imagen de " + product.description}" 
-        onerror="this.src='img/image-not-found.png';" width=100%>
+      <a href="eror404.html"><img src="${product.url}" alt="${"Imagen de " + product.description}" 
+        onerror="this.src='img/image-not-found.png';" width=100%></a>
         <h5 class="card-title">${
-          product.description + "-Modelo-" + product.model
-        }</h5><h6 class="card-title">${
+          product.description}</h5>
+        <h5 class="card-title">${"Modelo-" + product.model
+        }</h5>
+        <h6 class="card-title">${
     "Categoria: " + product.category
   }</h6><span class="badge rounded-pill bg-dark">${
     "$ " + product.price + ",00"
