@@ -17,7 +17,7 @@ function createCard(product) {
     <div class="card shadow bg-light border border-0">
       <div class="card-body">
       <a href="eror404.html"><img src="${product.url}" alt="${"Imagen de " + product.description}" 
-        onerror="this.src='img/image-not-found.png';" width=100%></a>
+        onerror="this.src='img/image-not-found.png';" width=50%></a>
         <h5 class="card-title">${
           product.description}</h5>
         <h5 class="card-title">${"Modelo-" + product.model
