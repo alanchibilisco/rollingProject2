@@ -1,5 +1,5 @@
 let superUser={name:'admin', password:'admin'};
-let regUser=JSON.parse(localStorage.getItem('regUser'));
+let regUser=JSON.parse(localStorage.getItem('regUser')||[]);
 let inputUser=document.getElementById('inputUser');
 let inputPass=document.getElementById('inputPass');
 let formLogin=document.getElementById('formLogin');
@@ -25,25 +25,20 @@ function login(e){
     if(gralValidate(inputUser, inputPass)){
         if(inputUser.value===superUser.name){
             if(inputPass.value===superUser.password){
-                sesionInit=true;
-                //console.log('ingresado desde admin');
-                localStorage.setItem('stateSesion', JSON.stringify(sesionInit));
+                sesionInit=true;                
+                sessionStorage.setItem('stateSesion', JSON.stringify(sesionInit));
                 localStorage.setItem('user', JSON.stringify(superUser));
                 window.location.replace("index.html");
     
             }else{
-                alert('Contraseña Incorrecta. Ingrese nuevamente');
-                //console.log('contraseña incorrecta');
+                alert('Contraseña Incorrecta. Ingrese nuevamente');    
             }
-        }else if(inputUser.value===findUser(inputUser.value).email){
-            //console.log('desde '+findUser(inputUser.value).email);
-            if(inputPass.value===findUser(inputUser.value).pass){
-                //console.log('correctamente logeado');
+        }else if(inputUser.value===findUser(inputUser.value).email){           
+            if(inputPass.value===findUser(inputUser.value).pass){    
                 let newUser=findUser(inputUser.value);
                 sesionInit=true;
-                localStorage.setItem('stateSesion', JSON.stringify(sesionInit));
-                localStorage.setItem('user', JSON.stringify(newUser));
-                //console.log('fin logeo usario: '+newUser.name);
+                sessionStorage.setItem('stateSesion', JSON.stringify(sesionInit));
+                localStorage.setItem('user', JSON.stringify(newUser));   
                 window.location.replace("index.html");
             }else{
                 alert('Contraseña Incorrecta. Ingrese nuevamente');
