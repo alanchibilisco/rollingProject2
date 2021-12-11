@@ -1,5 +1,5 @@
 let superUser={name:'admin', password:'admin'};
-let regUser=JSON.parse(localStorage.getItem('regUser')||[]);
+let regUser=JSON.parse(localStorage.getItem('regUser'));
 let inputUser=document.getElementById('inputUser');
 let inputPass=document.getElementById('inputPass');
 let formLogin=document.getElementById('formLogin');
@@ -64,17 +64,6 @@ function findUser(email){
 }
 
 //validaciones
-
-// function requiredField(input){
-//     if(input.value.trim().length>0){
-//         input.className='form-control is-valid';
-//         return true;
-//     }else{
-//         input.className='form-control is-invalid';
-//         return false;
-//     }
-// }
-
 function validateEmail(input){
     let regEmail=/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
     if(regEmail.test(input.value)){
