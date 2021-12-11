@@ -1,55 +1,59 @@
 let superUser={name:'admin', password:'admin'};
 let regUser=JSON.parse(localStorage.getItem('regUser'));
-//console.log(regUser);
 let inputUser=document.getElementById('inputUser');
 let inputPass=document.getElementById('inputPass');
 let formLogin=document.getElementById('formLogin');
 let sesionInit=false;
 
 
-//asociando el evento submit
+//asociando eventos 
+inputUser.addEventListener('blur',()=>{
+    validateEmail(inputUser);
+});
+inputPass.addEventListener('blur',()=>{
+    validatePass(inputPass);
+});
 formLogin.addEventListener('submit', login);
+
+
+//funciones
 
 function login(e){
     e.preventDefault();
     console.log(inputUser.value);
     console.log(inputPass.value);
-    if(inputUser.value===superUser.name){
-        if(inputPass.value===superUser.password){
-            sesionInit=true;
-            //console.log('ingresado desde admin');
-            localStorage.setItem('stateSesion', JSON.stringify(sesionInit));
-            localStorage.setItem('user', JSON.stringify(superUser));
-            window.location.replace("index.html");
-
+    if(gralValidate(inputUser, inputPass)){
+        if(inputUser.value===superUser.name){
+            if(inputPass.value===superUser.password){
+                sesionInit=true;
+                //console.log('ingresado desde admin');
+                localStorage.setItem('stateSesion', JSON.stringify(sesionInit));
+                localStorage.setItem('user', JSON.stringify(superUser));
+                window.location.replace("index.html");
+    
+            }else{
+                alert('Contraseña Incorrecta. Ingrese nuevamente');
+                //console.log('contraseña incorrecta');
+            }
+        }else if(inputUser.value===findUser(inputUser.value).email){
+            //console.log('desde '+findUser(inputUser.value).email);
+            if(inputPass.value===findUser(inputUser.value).pass){
+                //console.log('correctamente logeado');
+                let newUser=findUser(inputUser.value);
+                sesionInit=true;
+                localStorage.setItem('stateSesion', JSON.stringify(sesionInit));
+                localStorage.setItem('user', JSON.stringify(newUser));
+                //console.log('fin logeo usario: '+newUser.name);
+                window.location.replace("index.html");
+            }else{
+                alert('Contraseña Incorrecta. Ingrese nuevamente');
+            }
         }else{
-            alert('Contraseña Incorrecta. Ingrese nuevamente');
-            //console.log('contraseña incorrecta');
-        }
-    }else if(inputUser.value===findUser(inputUser.value).email){
-        //console.log('desde '+findUser(inputUser.value).email);
-        if(inputPass.value===findUser(inputUser.value).pass){
-            //console.log('correctamente logeado');
-            let newUser=findUser(inputUser.value);
-            sesionInit=true;
-            localStorage.setItem('stateSesion', JSON.stringify(sesionInit));
-            localStorage.setItem('user', JSON.stringify(newUser));
-            //console.log('fin logeo usario: '+newUser.name);
-            window.location.replace("index.html");
-        }else{
-            alert('Contraseña Incorrecta. Ingrese nuevamente');
+            alert('Usuario Incorrecto. Ingrese nuevamente');
         }
     }else{
-        alert('Usuario Incorrecto. Ingrese nuevamente');
-    }
-
-    
-
-    
-    
-  
-
-    
+        alert('Debe completar todos los campos');
+    }    
 }
 
 function findUser(email){
@@ -62,4 +66,51 @@ function findUser(email){
         return '';
     }
     
+}
+
+//validaciones
+
+// function requiredField(input){
+//     if(input.value.trim().length>0){
+//         input.className='form-control is-valid';
+//         return true;
+//     }else{
+//         input.className='form-control is-invalid';
+//         return false;
+//     }
+// }
+
+function validateEmail(input){
+    let regEmail=/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+    if(regEmail.test(input.value)){
+        input.className='form-control is-valid';
+        return true;
+    }else if(input.value.trim().length>0&&input.value.trim().length<6){
+        input.className='form-control is-valid';
+        return true;
+    }else{
+        input.className='form-control is-invalid';
+        return false;
+    }
+}
+
+function validatePass(input){
+    let regPass=/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/;
+    if(regPass.test(input.value)){
+        input.className='form-control is-valid';
+        return true;
+    }else if(input.value.trim().length>0&&input.value.trim().length<6){
+        input.className='form-control is-valid';
+        return true;
+    }else{
+        inputPass.className='form-control is-invalid';
+    }
+}
+
+function gralValidate(inputUser, inputPass){
+    if(validateEmail(inputUser)&&validatePass(inputPass)){
+       return true; 
+    }else{
+        return false;
+    }
 }
