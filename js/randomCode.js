@@ -1,32 +1,27 @@
-import {regCode} from "./admin.js";
+import { regCode } from "./admin.js";
 
-//  export let regCode=JSON.parse(localStorage.getItem('regCodeKey')) || [];
+//variables
 let repeated;
-
-export function random(){
-    do{
-        let code=parseInt(Math.random()*999999);
-        repeated=repeatedCode(code);
-        if(!repeated){
-            regCode.push(code);
-            return code;
-        }else{
-            repeated=false;
-        }
-    }while(!repeated);
-}
-
-
-function repeatedCode(code){
-    for (let i=0; i<regCode.length; i++){
-        if(code===regCode[i]){
-            repeated=true;
-            break;
-        }
+//funciones
+export function random() {
+  do {
+    let code = parseInt(Math.random() * 999999);
+    repeated = repeatedCode(code);
+    if (!repeated) {
+      regCode.push(code);
+      return code;
+    } else {
+      repeated = false;
     }
-    return repeated;
+  } while (!repeated);
 }
 
-//  export function regCodeLocalStorage(){
-//      localStorage.setItem('regCodeKey',JSON.stringify(regCode));
-//  }
+function repeatedCode(code) {
+  for (let i = 0; i < regCode.length; i++) {
+    if (code === regCode[i]) {
+      repeated = true;
+      break;
+    }
+  }
+  return repeated;
+}
