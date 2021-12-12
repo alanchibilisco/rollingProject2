@@ -21,7 +21,7 @@
 
 ## **Librerias Usadas**
 - [Boostrap v5.1](https://getbootstrap.com/)
-- [Fonawesome](https://fontawesome.com/)
+- [Fontawesome](https://fontawesome.com/)
 - [SweetAlert](https://sweetalert.js.org/)
 - [AOS-Animate On Scroll Library](https://michalsnik.github.io/aos/)
 
