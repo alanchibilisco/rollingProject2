@@ -1,7 +1,7 @@
 # **Rolling Code School - Proyecto Integrador N°2**
 
 ## ***Nombre del proyecto: "ROLLINGTECH"***
-    Proyecto basado en un sitio ficticio de e-commerce de productos tecnologicos (smartphones, laptops, tablets y accesorios), en el cual se desarrolla un CRUD (Create-Read-Update-Delete), de los productos del sitio. Ademas incopora un sistema de registro de usuarios del sitio y metodos de ingreso al mismo.
+   - Proyecto basado en un sitio ficticio de e-commerce de productos tecnologicos (smartphones, laptops, tablets y accesorios), en el cual se desarrolla un CRUD (Create-Read-Update-Delete), de los productos del sitio. Ademas incopora un sistema de registro de usuarios del sitio y metodos de ingreso al mismo.
     El administrador del sitio es quien posee los privilegios de acceder a la pagina de administracion, donde se desarrolla el CRUD, como asi tambien poder visualizar todos los usuarios registrados, con la posibilidad de eliminarlos.
   
 ## **Estructura general del sitio**
