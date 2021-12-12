@@ -69,7 +69,7 @@ function gralValidate(inputUser, inputEmail, inputPass) {
   if (
     requiredField(inputUser) &&
     validateEmail(inputEmail) &&
-    requiredField(inputPass)
+    validatePass(inputPass)
   ) {
     return true;
   } else {
