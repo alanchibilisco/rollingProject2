@@ -8,13 +8,17 @@
     <meta name="author" content="Luis Reartez, Santiago Adan, Julieta Hurtado, Carolina Diaz, Alan Chibilisco" />
     <meta name="keywords" content="tecnologia" />
     <title>ROLLINGTECH</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <script src="https://kit.fontawesome.com/2e88fab4d5.js" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
-  <body class="bg-light">
+  <body class="bg-light fonts">
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark navfixed">
         <div class="container-fluid">
@@ -46,21 +50,46 @@
         </div>
       </nav>
     </header>
-    <main class="bg-light my-5">
+    <main class="pt-5">
       <section class="container">
-        <h3 class="text-center">Login</h3>
-        <form id="formLogin"> 
-            <div>
-              <label class="form-label">Email</label>
-              <input type="text" class="form-control" placeholder="example@example.com" id="inputUser">
+        <form id="formLogin"></form>
+        <div class="container-md">
+        <div class="row align-items-center  w-100">
+          <div class="col-sm-12 col-md-6" data-aos="fade-right"
+          data-aos-anchor="#example-anchor"
+          data-aos-offset="500"
+          data-aos-duration="500">
+            <H1 class="display-4 mt-3">Accede a tu cuenta</H1>
+            <form>
+              <div>
+                <label for="InputEmail1" class="form-label">Email / Usuario</label>
+                <input  class="form-control" id="inputUser"  required placeholder="Juanperez@rollingtech.com">
+              </div>
+              <div class="mb-3">
+                <label for="InputPassword1" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="inputPass" required placeholder="Ingrese su contraseña..." >
+              </div>
+              <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="Check1">
+                <label class="form-check-label" for="Check1">No soy un robot</label>
+              </div>
+              <div>
+              <button type="submit" class="btn btn btn-dark">Iniciar Sesion</button><button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#passwordModal">Olvidaste tu Contraseña?</button>             
             </div>
-            <div class="mb-3">
-              <label class="form-label">Password</label>
-              <input type="password" class="form-control" placeholder="Password" id="inputPass">
-            </div>
-            <button type="submit" class="btn btn-dark">Login</button>
-          </form>
-        </section>
+            </form>
+            <hr>
+            <section class="text-center">
+          <a href="eror404.html"><button class="rounded-pill border border-white bg-primary text-white"><i class="fab fa-facebook-square"></i>    Inicia sesion con Facebook </button></a>
+          <a href="eror404.html"><button class="rounded-pill border border-white bg-danger text-white"><i class="fab fa-google-plus-square"></i>   Inicia sesion con Google</button></a>
+          </div>
+          <div class="col-sm-12 col-md-6" data-aos="fade-left"
+          data-aos-anchor="#example-anchor"
+          data-aos-offset="500"
+          data-aos-duration="500">
+           <img src="https://images.pexels.com/photos/3585093/pexels-photo-3585093.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="login" class="img-fluid mt-5 shadow-lg rounded">
+          </section></div>
+        </div>
+        </div>
     </main>
     <footer class="
         mt-4
@@ -133,5 +162,10 @@
   </footer>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/login.js"></script>    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+    
   </body>
 </html>
