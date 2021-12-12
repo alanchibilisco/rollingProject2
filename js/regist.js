@@ -84,7 +84,10 @@ function saveUser(e){
             window.location.replace("login.html")
         }, 1500);
         
+    }else{
+        alert('Debe completar todos los campos');
     }
+
 }
 
 function createUser(){
