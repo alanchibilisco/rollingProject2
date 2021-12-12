@@ -50,7 +50,7 @@
       <section class="container">
         <h1 class="text-center my-4">Login</h1>
         <article class="row">
-          <div class="col-sm-12 col-md-6">
+          <div class="col-sm-12 col-md-6" data-aos="fade-up">
             <form id="formLogin"> 
               <div class="my-3">
                 <label class="form-label">Email</label>
@@ -63,7 +63,7 @@
               <button type="submit" class="btn btn-dark my-3">Login</button>
             </form>
           </div>
-          <div class="col-sm-12 col-md-6">
+          <div class="col-sm-12 col-md-6" data-aos="fade-down">
             <img src="img/ipadmini.JPG" alt="Ipad Mini" class="img-fluid">
           </div>
         </article>
@@ -140,6 +140,10 @@
     </p>
   </footer>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/login.js"></script>    
+    <script src="js/login.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
   </body>
 </html>
