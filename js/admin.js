@@ -7,7 +7,7 @@ import {
 
 import { Product } from "./productClass.js";
 
-import { random} from "./randomCode.js";
+import { random } from "./randomCode.js";
 
 //variables
 
@@ -21,11 +21,11 @@ let inputUrl = document.getElementById("url");
 let form = document.getElementById("idForm");
 let regProducts =
   JSON.parse(localStorage.getItem("regProductsLocalStorage")) || [];
-export let regCode=JSON.parse(localStorage.getItem('regCodeKey')) || [];
-let regUser=JSON.parse(localStorage.getItem('regUser')) || [];
+export let regCode = JSON.parse(localStorage.getItem("regCodeKey")) || [];
+let regUser = JSON.parse(localStorage.getItem("regUser")) || [];
 let productExist = false;
 let newBtn = document.getElementById("newBtn");
-let msj=document.getElementById('msj');
+let msj = document.getElementById("msj");
 
 //asociando los eventos
 
@@ -61,7 +61,6 @@ newBtn.addEventListener("click", cleanForm);
 
 initCharge();
 initChargeUser();
-
 
 //funcion para guardar el producto
 function saveProduct(e) {
@@ -119,7 +118,7 @@ function cleanForm() {
   inputBrand.className = "form-control";
   inputPrice.className = "form-control";
   inputUrl.className = "form-control";
-  msj.className='alert alert-danger my-5 d-none';
+  msj.className = "alert alert-danger my-5 d-none";
   saveRegProductsLocalStorage();
   regCodeLocalStorage();
   productExist = false;
@@ -130,8 +129,8 @@ function saveRegProductsLocalStorage() {
   localStorage.setItem("regProductsLocalStorage", JSON.stringify(regProducts));
 }
 
-function regCodeLocalStorage(){
-    localStorage.setItem('regCodeKey',JSON.stringify(regCode));
+function regCodeLocalStorage() {
+  localStorage.setItem("regCodeKey", JSON.stringify(regCode));
 }
 //funcion para crear una nueva fila en la seccion 2 y 3
 function createRow(newProduct) {
@@ -152,14 +151,13 @@ function createRow(newProduct) {
   </tr>`;
 }
 
-function createRowUser(user){
-  let tableUser=document.getElementById('tableUser');
-  tableUser.innerHTML+=`<tr>
+function createRowUser(user) {
+  let tableUser = document.getElementById("tableUser");
+  tableUser.innerHTML += `<tr>
   <th scope="row">${user.name}</th>
   <td>${user.email}</td>
   <td>${user.pass}</td>            
-  <td class="text-center"><button class="btn btn-dark" onclick='eraseUser("${
-    user.email}")'><i class="fas fa-trash"></i></button></td>
+  <td class="text-center"><button class="btn btn-dark" onclick='eraseUser("${user.email}")'><i class="fas fa-trash"></i></button></td>
 </tr>`;
 }
 
@@ -173,9 +171,11 @@ function initCharge() {
   }
 }
 
-function initChargeUser(){
-  if(regUser.length>0){
-    regUser.forEach((user)=>{ createRowUser(user);});  
+function initChargeUser() {
+  if (regUser.length > 0) {
+    regUser.forEach((user) => {
+      createRowUser(user);
+    });
   }
 }
 
@@ -233,13 +233,11 @@ window.eraseProduct = function (code) {
     return product.code != code;
   });
 
-  let newRegCode=regCode.filter((codeReg)=>{
-      return (codeReg!=code);
-  })
-  console.log(newRegCode);
-  console.log(regCode);
-  regProducts = newRegProd
-  regCode=newRegCode;
+  let newRegCode = regCode.filter((codeReg) => {
+    return codeReg != code;
+  });
+  regProducts = newRegProd;
+  regCode = newRegCode;
   saveRegProductsLocalStorage();
   regCodeLocalStorage();
   cleanTable();
@@ -249,20 +247,17 @@ window.eraseProduct = function (code) {
     "Su producto fue correctamente eliminado",
     "success"
   );
-  console.log(regCode);
 };
 
-window.eraseUser = function (email){
-  let newRegUser=regUser.filter((user)=>{
-    return (user.email!=email);
-})
-  console.log(regUser);
-  console.log(newRegUser);
-  regUser=newRegUser;
-  localStorage.removeItem('regUser');
-  localStorage.setItem('regUser', JSON.stringify(regUser));
-  let tableUser=document.getElementById('tableUser');
-  tableUser.innerHTML='';
+window.eraseUser = function (email) {
+  let newRegUser = regUser.filter((user) => {
+    return user.email != email;
+  });
+  regUser = newRegUser;
+  localStorage.removeItem("regUser");
+  localStorage.setItem("regUser", JSON.stringify(regUser));
+  let tableUser = document.getElementById("tableUser");
+  tableUser.innerHTML = "";
   initChargeUser();
   Swal.fire(
     "Usuario Eliminado",

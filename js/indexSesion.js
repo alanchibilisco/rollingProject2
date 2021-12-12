@@ -1,6 +1,6 @@
 //variables
 let superUser = { name: "admin", password: "admin" };
-let stateSesion = JSON.parse(localStorage.getItem("stateSesion")) || false;
+let stateSesion = JSON.parse(sessionStorage.getItem("stateSesion")) || false;
 let user = JSON.parse(localStorage.getItem("user")) || "";
 let linkAdmin = document.getElementById("linkAdmin");
 let regBtn = document.getElementById("regBtn");
@@ -27,7 +27,7 @@ if (stateSesion) {
 function closeSesion() {
   if (stateSesion) {
     stateSesion = false;
-    localStorage.setItem("stateSesion", JSON.stringify(stateSesion));
+    sessionStorage.setItem("stateSesion", JSON.stringify(stateSesion));
     localStorage.removeItem("user");
     window.location.replace("index.html");
   } else {

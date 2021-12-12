@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
 *{
-    font-family: 'Nunito', sans-serif; 
+    font-family: 'Nunito', sans-serif;    
 }
 
 .boton{
@@ -27,4 +27,26 @@ padding: 10px;
 
 .pt-3 {
     padding-top: 1rem!important;
+}
+
+.imgIndex{
+    width: 50%;
+}
+
+.imgCard{
+    width: 400px;
+    height: 250px;
+    
+}
+
+@media all and (max-width: 1000px){
+    .imgIndex{
+        height: 540px;
+        width: 270px;
+    }
+
+    .imgCard{
+        width: 230px;
+        height: 230px;
+    }
 }

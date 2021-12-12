@@ -47,12 +47,14 @@
       </nav>
     </header>
     <main class="bg-light container-fluid">
-        <section>
+        <section data-aos="zoom-in-up">
             <h1 class="text-center p-3 display-2">Acerca de Nosotros</h1>
             <h4 class="container p-5">Somos Alan, Carolina, Julieta, Santiago y Luis. Somos un equipo de trabajo dedicado a poner lo mejor de nosotros, para que el usuario pueda estar informado sobre lo ultimo de la tecnologia. A continuación les presentamos una breve descripción de cada uno:</h4>
             <hr>
         </section>
-        <article class="contenedorImg row text-center m-3">
+        <article class="contenedorImg row text-center m-3" data-aos="fade-down"
+        data-aos-easing="linear"
+        data-aos-duration="1500">
           <div class="col-md-4 col-sm-12 pt-3">
             <img class="imgCircular shadow" src="img/avatarAlan3.jpg" alt="presentacionAlan">
             <h5 class="text-center my-3">Alan Chibilisco</h5>
@@ -61,7 +63,7 @@
           <div class="col-md-4 col-sm-12 pt-3">
             <img class="imgCircular shadow" src="img/avatarSantiago3.jpg" alt="presentacionSantiago">
             <h5 class="text-center my-3">Santiago Adan</h5>
-            <p class="text-center ">Tengo 33 años soy empleado administrativo en una empresa constructora</p>
+            <p class="text-center ">Tengo 22 años soy empleado administrativo en una empresa de software</p>
           </div>
           <div class="col-md-4 col-sm-12 pt-3">
             <img class="imgCircular shadow" src="img/avatarJulieta3.jpg" alt="presentacionJulieta">
@@ -154,5 +156,10 @@
 </footer>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/indexSesion.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  
 </body>
 </html>
