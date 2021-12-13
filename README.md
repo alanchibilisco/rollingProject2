@@ -19,6 +19,9 @@
 - [ROLLINGTECH](https://rollingtechnology.netlify.app)
 - Usuario Administrador (Usuario: "admin". Password: "admin")
 
+## **BUGS**
+- Presente algunas veces problemas con los efectos de las paginas solo en el navegador Google Chrome, los mismos no estan presentes en Mozilla Firefox ni en Edge
+
 ## **Librerias Usadas**
 - [Boostrap v5.1](https://getbootstrap.com/)
 - [Fontawesome](https://fontawesome.com/)
